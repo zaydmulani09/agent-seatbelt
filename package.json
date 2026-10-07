@@ -1,0 +1,57 @@
+{
+  "name": "agent-seatbelt",
+  "version": "0.1.0",
+  "description": "A seatbelt and black box for personal AI agents: a local MCP gateway with plain-English timeline, approvals, spend caps, a STOP button and a weekly receipt.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "shots": "node scripts/shots.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "ai-agents",
+    "gateway",
+    "safety",
+    "kill-switch",
+    "audit-log",
+    "policy"
+  ],
+  "author": "Zayd Mulani <257340907+zaydmulani09@users.noreply.github.com> (https://github.com/zaydmulani09)",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "eslint": "^10.12.0",
+    "playwright-core": "^1.63.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
+  },
+  "bin": {
+    "agent-seatbelt": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "ui",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaydmulani09/agent-seatbelt.git"
+  },
+  "homepage": "https://github.com/zaydmulani09/agent-seatbelt#readme",
+  "bugs": {
+    "url": "https://github.com/zaydmulani09/agent-seatbelt/issues"
+  }
+}
