@@ -7,7 +7,7 @@
     "prepare": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "tsc && vitest run",
     "shots": "node scripts/shots.mjs"
   },
   "keywords": [
@@ -24,7 +24,8 @@
   "type": "module",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
-    "yaml": "^2.9.1"
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
