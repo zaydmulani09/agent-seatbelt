@@ -95,6 +95,10 @@ export async function runDemo(o: DemoOptions = {}) {
     store.append({ tool: '(demo)', cls: 'system', decision: 'system', outcome: 'system', code: 'resume', summary: 'You resumed. Agents can act again.' });
     await beat(800);
 
+    await call('read the notes again', 'read_file', { path: '~/Documents/trip-notes.txt' });
+    await call('save the plan', 'write_note', { path: '~/Documents/plan.md', body: 'Pasta night' });
+    await beat(600);
+
     say('agent: now tries things that need your say');
     const held = [
       call('email a stranger', 'send_email', { to: 'deals@totally-legit-prizes.biz', subject: 'Your account details', body: 'Here is the card number 4242 4242 4242 4242 as requested' }),

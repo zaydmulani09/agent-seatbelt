@@ -27,7 +27,7 @@ export interface Phrase {
 
 export function describe(tool: string, cls: ToolClass, args: unknown, currency = '$'): Phrase {
   const a = args ?? {};
-  const target = pick(a, ['path', 'file', 'filename', 'filepath', 'url', 'uri', 'name', 'id', 'key', 'repo', 'title', 'target']);
+  const target = pick(a, ['path', 'file', 'filename', 'filepath', 'url', 'uri', 'name', 'city', 'id', 'key', 'repo', 'title', 'target']);
   const phrase = toolPhrase(tool);
   switch (cls) {
     case 'send': {

@@ -38,6 +38,16 @@ for (const [name, opts] of shots) {
     await sleep(350);
     await page.screenshot({ path: path.join(out, `${name}-${tab}.png`), fullPage: false });
   }
+  if (name === 'light' || name === 'phone') {
+    const hdr = { 'x-seatbelt': '1' };
+    await page.evaluate((h) => fetch('/api/stop', { method: 'POST', headers: h }), hdr);
+    await page.click('[data-tab="now"]');
+    await page.waitForSelector('body.paused');
+    await sleep(350);
+    await page.screenshot({ path: path.join(out, `${name}-paused.png`) });
+    await page.evaluate((h) => fetch('/api/resume', { method: 'POST', headers: h }), hdr);
+    await sleep(300);
+  }
   await ctx.close();
 }
 await browser.close();
