@@ -35,7 +35,7 @@ function luhn(digits: string): boolean {
 export function redactString(s: string): string {
   let out = s;
   for (const re of VALUE_PATTERNS) out = out.replace(re, MASK);
-  out = out.replace(/\b(?:\d[ -]?){13,19}\b/g, (m) => {
+  out = out.replace(/\b\d(?:[ -]?\d){12,18}\b/g, (m) => {
     const d = m.replace(/[ -]/g, '');
     return d.length >= 13 && d.length <= 19 && luhn(d) ? MASK : m;
   });

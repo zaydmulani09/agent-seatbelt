@@ -56,17 +56,18 @@ export function describe(tool: string, cls: ToolClass, args: unknown, currency =
     }
     case 'write': {
       const tail = target ? ` ${cut(target, 50)}` : '';
-      return { past: `Changed${tail || ` something (${phrase})`}`, inf: `change${tail || ` something (${phrase})`}` };
+      return tail ? { past: `Changed${tail}`, inf: `change${tail}` } : { past: `Used the ${phrase} tool`, inf: `use the ${phrase} tool` };
     }
     case 'read': {
       const query = pick(a, ['query', 'q', 'search', 'text']);
+      const used = { past: `Used the ${phrase} tool`, inf: `use the ${phrase} tool` };
       const tail = query ? ` for ${q(query)}` : target ? ` ${cut(target, 50)}` : '';
       return query
         ? { past: `Searched${tail}`, inf: `search${tail}` }
-        : { past: `Looked at${tail || ` (${phrase})`}`, inf: `look at${tail || ` (${phrase})`}` };
+        : tail ? { past: `Looked at${tail}`, inf: `look at${tail}` } : used;
     }
     default:
-      return { past: `Used ${phrase}`, inf: `use ${phrase}` };
+      return { past: `Used the ${phrase} tool`, inf: `use the ${phrase} tool` };
   }
 }
 
