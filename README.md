@@ -1,6 +1,6 @@
 # Agent Seatbelt
 
-[![M8ven Score](https://m8ven.ai/badge/mcp/zaydmulani09-agent-seatbelt-n6m0hp?v=48f0d1c23865f651ec535ba92783388b)](https://m8ven.ai/mcp/zaydmulani09-agent-seatbelt-n6m0hp?s=readme)
+[![M8ven Score](https://m8ven.ai/badge/mcp/zaydmulani09-agent-seatbelt-n6m0hp?v=4fa4897deda15bac93b9bd792af37fc4)](https://m8ven.ai/mcp/zaydmulani09-agent-seatbelt-n6m0hp?s=readme)
 
 **A seatbelt and a black box for your AI agents.** A local gateway that sits between any MCP agent and its tools: it writes down everything the agent did in plain English, asks before it spends, sends or deletes, caps its spending, and has one big STOP button.
 
